@@ -159,7 +159,7 @@ runs:
       shell: bash
       run: |
         [ -d /opt/openssl ] && export PATH=/opt/openssl/bin:$PATH
-        make -j `nproc`
+        VERBOSE=1 make -j `nproc` libfreeradius-radius.la
 
     # Disabled on MacOS and when fuzzing to reduce the runtime
     - name: Clang Static Analyzer
